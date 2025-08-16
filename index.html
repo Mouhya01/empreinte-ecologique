@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Calculateur d'Empreinte Ecologique</title>
+        <link href="style.css" rel="stylesheet">
+        <script src="script.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <nav id="nav-bar">
+                <a href="#acceuil" class="nav-link">Accueil</a>
+                <a href="#documentation" class="nav-link">Documentation</a>
+                <a href="#calculateur" class="nav-link">Calculateur d'Empreinte</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="acceuil">
+                <h1>Calculateur d'Empreinte Écologique</h1>
+                <p>Bienvenue sur notre site, ou vous pourrez faire votre bilan sur votre Empreinte Écologique.</p>
+                <p>Cette Planéte est la notre, donc la protéger est notre mission et quoi de mieux que on calculant son empreinte ecologique.🌍</p>
+
+            </section>
+
+            <section id="documentation">
+                <h2>Documentation</h2>
+
+                <h3>Définition</h3>
+                <p>L'empreinte écologique est un indicateur qui mesure la quantité de ressources naturelles nécessaires pour subvenir à nos besoins et absorber nos déchets, notamment les émissions de CO₂. Elle est exprimée en "hectares globaux" ou en kilogrammes de CO₂ équivalents par an.
+
+                </p>
+
+                <h3>Pourquoi c'est important?</h3>
+                <p>
+                    L'empreinte écologique est importante car elle permet de comprendre l'impact de nos choix de consommation et de nos modes de vie sur la planète.
+                    En comparant notre empreinte aux capacités de régénération de la Terre, on sait si nous vivons de manière durable ou si nous épuisons les ressources naturelles.
+                </p>
+
+                <h3>Comment la réduire ?</h3>
+            
+                <ol>
+                    <li>Réduire les déplacements motorisés → privilégier la marche, le vélo, les transports en commun.</li>
+                    <li>Économiser l'énergie → utiliser des appareils économes, éteindre les lumières, isoler son logement.</li>
+                    <li>Adopter une alimentation durable → consommer moins de viande et plus de produits locaux.</li>
+                    <li>Limiter la surconsommation → acheter moins mais mieux (réparer, recycler, seconde main).</li>
+                </ol>
+            
+
+            </section>
+
+            <section id="calculateur">
+                <form>
+                    <fieldset>
+                        <legend>Transport</legend>
+                        <label for="voiture">Kilométres/semaine en voiture</label><br>
+                        <input type="number" name="distance-voiture" id="voiture" required min="0" autofocus placeholder="saisir le nombre ici....">
+
+                        <label for="bus">Kilométre/semaines en bus</label><br>
+                        <input type="number" name="distance-bus" id="bus" required min="0" placeholder="saisir le nombre ici....">
+
+                        <label for="vols">Nombre de vols/an</label><br>
+                        <input type="number" name="distance-avion" id="vols"  min="0" required  placeholder="saisir le nombre ici....">
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Énergie</legend>
+                        <label for="electricite">Consommation électrique(kWh/mois)</label><br>
+                        <input type="number" name="electricite" id="electricite" min="0" required placeholder="saisir votre consommation ici....">
+
+                        <input type="checkbox" id="renouvelable" name="renouvelable" value="oui">
+                        <label for="renouvelable">Utilisez-vous de l'energie renouvelable?</label>
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Alimentation</legend>
+                        <label for="viande">Frequence de consommation de viande</label>
+                        <select id="viande" name="viande">
+                            <option value="souvent">Souvent</option>
+                            <option value="parfois">Parfois</option>
+                            <option value="rarement">Rarement</option>
+                            <option value="jamais">Jamais</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Appareils électroniques</legend>
+                        <label for="appareils">Nombre d'appareils électronique achetés par an:</label><br>
+                        <input type="number" name="appareils" id="appareils" required min="0" placeholder="Veuillez rentrer le nombre ici...">
+
+                    </fieldset>
+
+                    <button type="submit" id="submit-btn">Envoyer</button>
+
+                    <button type="reset" id="reset-btn">Réinitialiser</button>
+                </form>
+            </section>
+
+            <section id="résultats">
+                <h2>Vos Résultats</h2>
+                <div id="resultats">
+                    <p></p>
+                </div>
+            </section>
+
+        </main>
+
+
+        <footer>
+            <p>© 2025 - Projet Empreinte Écologique</p>
+        </footer>
+    </body>
+</html>
