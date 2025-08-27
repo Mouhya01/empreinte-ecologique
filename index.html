@@ -6,6 +6,10 @@
         <title>Calculateur d'Empreinte Ecologique</title>
         <link href="style.css" rel="stylesheet">
         <script src="script.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
 
     <body>
@@ -19,10 +23,12 @@
 
         <main>
             <section id="acceuil">
-                <h1>Calculateur d'Empreinte Écologique</h1>
-                <p>Bienvenue sur notre site, ou vous pourrez faire votre bilan sur votre Empreinte Écologique.</p>
-                <p>Cette Planéte est la notre, donc la protéger est notre mission et quoi de mieux que on calculant son empreinte ecologique.🌍</p>
-
+                <div class="hero-content">
+                    <h1>Calculateur d'Empreinte Écologique</h1>
+                    <p>Bienvenue sur notre site, ou vous pourrez faire votre bilan sur votre Empreinte Écologique.</p>
+                    <p>Cette Planéte est la notre, donc la protéger est notre mission et quoi de mieux que on calculant son empreinte ecologique.🌍</p>
+                    <a href="#calculateur" class="btn-primary">Commencer le calcul</a>
+                </div>
             </section>
 
             <section id="documentation">
@@ -52,7 +58,7 @@
             </section>
 
             <section id="calculateur">
-                <form>
+                <form id="ecocalcul-form">
                     <fieldset>
                         <legend>Transport</legend>
                         <label for="voiture">Kilométres/semaine en voiture</label><br>
@@ -102,8 +108,23 @@
 
             <section id="résultats">
                 <h2>Vos Résultats</h2>
-                <div id="resultats">
-                    <p></p>
+                <div class="result-container">
+                    <div class="carbon-footprint">
+                        <div class="footprint-value">0.0</div>
+                        <div class="footprint-unit">tonnes de CO2/an</div>
+                    </div>
+                    <div class="earth-comparison">
+                        <i class="fas fa-globe-europe"></i>
+                        <p>Votre empreinte équivaut a <span class="comparison-value">0.0</span> Terres</p>
+                    </div>
+                    <div class="recommendations">
+                        <h3>Nos recommandations :</h3>
+                        <ul>
+                            <li><i class="fas fa-leaf"></i>Privilégiez les transports en commun</li>
+                            <li><i class="fas fa-leaf"></i> Réduisez votre consommation de viande</li>
+                            <li><i class="fas fa-leaf"></i> Optimisez votre consommation d'énergie</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
