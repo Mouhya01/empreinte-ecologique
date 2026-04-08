@@ -1,51 +1,53 @@
-# 🌍 Calculateur d'Empreinte Écologique
+# 🌍 Ecological Footprint Calculator
 
-Ce projet est un **site web interactif** permettant de calculer son empreinte carbone annuelle à partir de ses habitudes de vie.  
-Il s'agit d'un projet **front-end** développé en **HTML, CSS et JavaScript**, dans le cadre de mon apprentissage du développement web.
-
----
-
-## 🚀 Objectif du projet
-
-L’objectif est de sensibiliser les utilisateurs à leur impact écologique et de leur fournir des **recommandations personnalisées** pour réduire leurs émissions de CO₂.  
-Le calculateur affiche :
-- Les émissions totales estimées (en tonnes de CO₂/an)
-- Une comparaison avec la moyenne mondiale (≈ 1.7 tonne par personne)
-- Un message de recommandation selon le niveau d’impact
+This project is an **interactive web application** that allows users to calculate their annual carbon footprint based on their daily lifestyle habits.  
+It is a **front-end project** developed using **HTML, CSS, and JavaScript**, created as part of my web development journey.
 
 ---
 
-## 🧮 Fonctionnement
+## 🚀 Project Objective
 
-L’utilisateur renseigne :
-- Ses **kilomètres parcourus** en voiture, bus, et le **nombre de vols** effectués,
-- Sa **consommation électrique** mensuelle,
-- Le **nombre d’appareils électroniques** achetés par an,
-- S’il **utilise ou non de l’énergie renouvelable**,
-- Sa **fréquence de consommation de viande**.
-
-Le script (`script.js`) calcule ensuite automatiquement :
-1. Les émissions de chaque poste,
-2. Le total annuel en tonnes de CO₂,
-3. Le **nombre de planètes Terre** nécessaires si tout le monde vivait ainsi.
+The goal is to raise awareness about ecological impact and provide users with **personalized recommendations** to reduce their CO₂ emissions.  
+The calculator displays:
+- Estimated total emissions (in tons of CO₂/year).
+- A comparison with the global average capacity (≈ 1.7 tons per person).
+- Tailored advice based on the user's environmental impact level.
 
 ---
 
-## 🧠 Technologies utilisées
+## 🧮 How It Works
 
-- **HTML5** – structure du site  
-- **CSS3** – mise en forme et présentation  
-- **JavaScript (DOM + logique)** – calcul des émissions et affichage dynamique  
-- **Git & GitHub** – gestion de versions et hébergement du projet  
-- *(Déploiement prévu sur GitHub Pages)*  
+Users provide data regarding:
+- **Transportation**: Weekly kilometers by car and bus, plus annual flight count.
+- **Energy**: Monthly electricity consumption and whether they use renewable energy.
+- **Diet**: Frequency of meat consumption.
+- **Electronics**: Number of electronic devices purchased per year.
 
+The core logic (`script.js`) automatically calculates:
+1. Emissions for each specific category using scientific coefficients.
+2. The total annual carbon footprint in tons of CO₂.
+3. The **number of Earths** required if everyone lived the same lifestyle.
 
-## 📜 Auteur
+---
 
-👨‍💻 **Mouhyadine**
+## 🧠 Technologies Used
 
-## 🏷️ Licence
+- **HTML5** – Site structure and accessibility.
+- **CSS3** – Modern layout and responsive design.
+- **JavaScript (DOM + Logic)** – Dynamic emission calculations and real-time UI updates.
+- **Git & GitHub** – Version control and project hosting.
+- *(Live deployment via GitHub Pages)*.
 
-Ce projet est libre d’utilisation à des fins éducatives et personnelles.  
-Merci de citer l’auteur en cas de réutilisation publique.
+---
 
+## 📜 Author
+
+👨‍💻 **Mouhyadine (Mouhya01)**
+*Computer Engineering Student & Full-Stack Developer*
+
+---
+
+## 🏷️ License
+
+This project is open-source and free to use for educational and personal purposes.  
+Please credit the author if used in a public context.

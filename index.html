@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-
-<html lang="fr">
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Calculateur d'Empreinte Ecologique</title>
+        <title>Ecological Footprint Calculator</title>
         <link href="style.css" rel="stylesheet">
         <script src="script.js" defer></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,126 +16,115 @@
     <body>
         <header>
             <nav id="nav-bar">
-                <a href="#acceuil" class="nav-link">Accueil</a>
+                <a href="#acceuil" class="nav-link">Home</a>
                 <a href="#documentation" class="nav-link">Documentation</a>
-                <a href="#calculateur" class="nav-link">Calculateur d'Empreinte</a>
+                <a href="#calculateur" class="nav-link">Footprint Calculator</a>
             </nav>
         </header>
 
         <main>
             <section id="acceuil">
                 <div class="hero-content">
-                    <h1>Calculateur d'Empreinte Écologique</h1>
-                    <p>Bienvenue sur notre site, ou vous pourrez faire votre bilan sur votre Empreinte Écologique.</p>
-                    <p>Cette Planéte est la notre, donc la protéger est notre mission et quoi de mieux que on calculant son empreinte ecologique.🌍</p>
-                    <a href="#calculateur" class="btn-primary">Commencer le calcul</a>
+                    <h1>Ecological Footprint Calculator</h1>
+                    <p>Welcome to our site, where you can assess your Ecological Footprint.</p>
+                    <p>This planet is ours, so protecting it is our mission—and what better way to start than by calculating your own footprint. 🌍</p>
+                    <a href="#calculateur" class="btn-primary">Start Calculation</a>
                 </div>
             </section>
 
             <section id="documentation">
                 <h2>Documentation</h2>
 
-                <h3>Définition</h3>
-                <p>L'empreinte écologique est un indicateur qui mesure la quantité de ressources naturelles nécessaires pour subvenir à nos besoins et absorber nos déchets, notamment les émissions de CO₂. Elle est exprimée en "hectares globaux" ou en kilogrammes de CO₂ équivalents par an.
+                <h3>Definition</h3>
+                <p>The ecological footprint is an indicator that measures the amount of natural resources required to support our needs and absorb our waste, particularly CO₂ emissions. It is expressed in "global hectares" or in kilograms of CO₂ equivalent per year.</p>
 
-                </p>
-
-                <h3>Pourquoi c'est important?</h3>
+                <h3>Why is it important?</h3>
                 <p>
-                    L'empreinte écologique est importante car elle permet de comprendre l'impact de nos choix de consommation et de nos modes de vie sur la planète.
-                    En comparant notre empreinte aux capacités de régénération de la Terre, on sait si nous vivons de manière durable ou si nous épuisons les ressources naturelles.
+                    The ecological footprint is important because it helps us understand the impact of our consumption choices and lifestyles on the planet.
+                    By comparing our footprint to the Earth's regenerative capacities, we can determine if we are living sustainably or depleting natural resources.
                 </p>
 
-                <h3>Comment la réduire ?</h3>
+                <h3>How to reduce it?</h3>
             
                 <ol>
-                    <li>Réduire les déplacements motorisés → privilégier la marche, le vélo, les transports en commun.</li>
-                    <li>Économiser l'énergie → utiliser des appareils économes, éteindre les lumières, isoler son logement.</li>
-                    <li>Adopter une alimentation durable → consommer moins de viande et plus de produits locaux.</li>
-                    <li>Limiter la surconsommation → acheter moins mais mieux (réparer, recycler, seconde main).</li>
+                    <li>Reduce motorized travel → prioritize walking, cycling, or public transport.</li>
+                    <li>Save energy → use energy-efficient appliances, turn off lights, and insulate your home.</li>
+                    <li>Adopt a sustainable diet → consume less meat and more local products.</li>
+                    <li>Limit overconsumption → buy less but better (repair, recycle, second-hand).</li>
                 </ol>
-            
-
             </section>
 
             <section id="calculateur">
                 <form id="ecocalcul-form">
                     <fieldset>
-                        <legend>Transport</legend>
-                        <label for="voiture">Kilométres/semaine en voiture</label><br>
-                        <input type="number" name="distance-voiture" id="voiture" required min="0" autofocus placeholder="saisir le nombre ici....">
+                        <legend>Transportation</legend>
+                        <label for="voiture">Kilometers per week by car</label><br>
+                        <input type="number" name="distance-voiture" id="voiture" required min="0" autofocus placeholder="enter number here....">
 
-                        <label for="bus">Kilométre/semaines en bus</label><br>
-                        <input type="number" name="distance-bus" id="bus" required min="0" placeholder="saisir le nombre ici....">
+                        <label for="bus">Kilometers per week by bus</label><br>
+                        <input type="number" name="distance-bus" id="bus" required min="0" placeholder="enter number here....">
 
-                        <label for="vols">Nombre de vols/an</label><br>
-                        <input type="number" name="distance-avion" id="vols"  min="0" required  placeholder="saisir le nombre ici....">
-
+                        <label for="vols">Number of flights per year</label><br>
+                        <input type="number" name="distance-avion" id="vols" min="0" required placeholder="enter number here....">
                     </fieldset>
 
                     <fieldset>
-                        <legend>Énergie</legend>
-                        <label for="electricite">Consommation électrique(kWh/mois)</label><br>
-                        <input type="number" name="electricite" id="electricite" min="0" required placeholder="saisir votre consommation ici....">
+                        <legend>Energy</legend>
+                        <label for="electricite">Electricity consumption (kWh/month)</label><br>
+                        <input type="number" name="electricite" id="electricite" min="0" required placeholder="enter your consumption here....">
 
-                        <label for="renouvelable">Utilisez-vous de l'energie renouvelable?</label>
-                        <input type="checkbox" id="renouvelable" name="renouvelable" value="oui" aria-placeholder="oui">
-                        
-
+                        <label for="renouvelable">Do you use renewable energy?</label>
+                        <input type="checkbox" id="renouvelable" name="renouvelable" value="yes">
                     </fieldset>
 
                     <fieldset>
-                        <legend>Alimentation</legend>
-                        <label for="viande">Frequence de consommation de viande</label>
+                        <legend>Diet</legend>
+                        <label for="viande">Meat consumption frequency</label>
                         <select id="viande" name="viande">
-                            <option value="souvent">souvent</option>
-                            <option value="parfois">parfois</option>
-                            <option value="rarement">rarement</option>
-                            <option value="jamais">jamais</option>
+                            <option value="souvent">Often</option>
+                            <option value="parfois">Sometimes</option>
+                            <option value="rarement">Rarely</option>
+                            <option value="jamais">Never</option>
                         </select>
                     </fieldset>
 
                     <fieldset>
-                        <legend>Appareils électroniques</legend>
-                        <label for="appareils">Nombre d'appareils électronique achetés par an:</label><br>
-                        <input type="number" name="appareils" id="appareils" required min="0" placeholder="Veuillez rentrer le nombre ici...">
-
+                        <legend>Electronics</legend>
+                        <label for="appareils">Number of electronic devices purchased per year:</label><br>
+                        <input type="number" name="appareils" id="appareils" required min="0" placeholder="Please enter the number here...">
                     </fieldset>
 
-                    <button type="submit" id="submit-btn">Envoyer</button>
-
-                    <button type="reset" id="reset-btn">Réinitialiser</button>
+                    <button type="submit" id="submit-btn">Submit</button>
+                    <button type="reset" id="reset-btn">Reset</button>
                 </form>
             </section>
 
             <section id="résultats">
-                <h2>Vos Résultats</h2>
+                <h2>Your Results</h2>
                 <div class="result-container">
                     <div class="carbon-footprint">
                         <div class="footprint-value">0.0</div>
-                        <div class="footprint-unit">tonnes de CO2/an</div>
+                        <div class="footprint-unit">tons of CO2/year</div>
                     </div>
                     <div class="earth-comparison">
                         <i class="fas fa-globe-europe"></i>
-                        <p>Votre empreinte équivaut a <span class="comparison-value">0.0</span> Terres</p>
+                        <p>Your footprint is equivalent to <span class="comparison-value">0.0</span> Earths</p>
                         <p class="conseils"></p>
                     </div>
                     <div class="recommendations">
-                        <h3>Nos recommandations :</h3>
+                        <h3>Our recommendations:</h3>
                         <ul>
-                            <li><i class="fas fa-leaf"></i>Privilégiez les transports en commun</li>
-                            <li><i class="fas fa-leaf"></i> Réduisez votre consommation de viande</li>
-                            <li><i class="fas fa-leaf"></i> Optimisez votre consommation d'énergie</li>
+                            <li><i class="fas fa-leaf"></i> Prioritize public transportation</li>
+                            <li><i class="fas fa-leaf"></i> Reduce your meat consumption</li>
+                            <li><i class="fas fa-leaf"></i> Optimize your energy usage</li>
                         </ul>
                     </div>
                 </div>
             </section>
-
         </main>
 
-
         <footer>
-            <p>© 2025 - Projet Empreinte Écologique</p>
+            <p>© 2025 - Ecological Footprint Project</p>
         </footer>
     </body>
 </html>

@@ -1,122 +1,125 @@
-//ETAPE1: Recuperation des element via le DOM
+// STEP 1: Element selection via DOM
 
-const transport_individuel=document.getElementById("voiture")
-const transport_collectif=document.getElementById("bus")
-const transport_aerien=document.getElementById("vols")
-const energie_consomme=document.getElementById("electricite")
-const appareils_electronique=document.getElementById("appareils")
+const individual_transport = document.getElementById("voiture");
+const collective_transport = document.getElementById("bus");
+const aerial_transport = document.getElementById("vols");
+const energy_consumed = document.getElementById("electricite");
+const electronic_devices = document.getElementById("appareils");
 
-// Pour recuperer la reponse de l'utilisateur sur le bouton checbox
-const energieRenouvelable=document.getElementById("renouvelable")
+// To get user response from the checkbox
+const renewableEnergy = document.getElementById("renouvelable");
 
-// Pour recuperer le choix de l'utilisateur sur la liste déroulante
-const alimentation_viande=document.getElementById("viande")
+// To get user choice from the dropdown list
+const meat_consumption = document.getElementById("viande");
 
-//recuperation des bouton
-const boutonEnvoyer=document.getElementById("submit-btn")
-const boutonReset=document.getElementById("reset-btn")
+// Button selection
+const submitBtn = document.getElementById("submit-btn");
+const resetBtn = document.getElementById("reset-btn");
 
-//Recuperation des section resultats vide du HTML
-const empreinteValeur=document.querySelector(".footprint-value")
-const comparaisonValeur=document.querySelector(".comparison-value")
-const recommandation=document.querySelector(".conseils")
+// Results section selection
+const footprintValue = document.querySelector(".footprint-value");
+const comparisonValue = document.querySelector(".comparison-value");
+const recommendationText = document.querySelector(".conseils");
 
-//ETAPE2: GESTION DES EVENEMENTS
+// STEP 2: EVENT MANAGEMENT
 
-//Premier type d'évenement: La saisie des input
-transport_individuel.addEventListener("input",function(){
-    console.log(`Vous avez parcouru ${transport_individuel.value} km en voitures par semaine`)
-})
+// Input events: Real-time logging
+individual_transport.addEventListener("input", function() {
+    console.log(`Car distance: ${individual_transport.value} km per week`);
+});
 
-transport_collectif.addEventListener("input",function(){
-    console.log(`Vous avez parcouru ${transport_collectif.value} km en bus par semaine`)
-})
+collective_transport.addEventListener("input", function() {
+    console.log(`Bus distance: ${collective_transport.value} km per week`);
+});
 
-transport_aerien.addEventListener("input",function(){
-    console.log(`Vous avez fait ${transport_aerien.value} vols durant cette année`)
-})
+aerial_transport.addEventListener("input", function() {
+    console.log(`Flights: ${aerial_transport.value} per year`);
+});
 
-energie_consomme.addEventListener("input",function(){
-    console.log(`Vous consommez ${energie_consomme.value} kWh d'electricité par mois`)
-})
+energy_consumed.addEventListener("input", function() {
+    console.log(`Electricity usage: ${energy_consumed.value} kWh per month`);
+});
 
-appareils_electronique.addEventListener("input",function(){
-    console.log(`Vous achetez ${appareils_electronique.value} appareils electronique par an`)
-})
+electronic_devices.addEventListener("input", function() {
+    console.log(`Devices purchased: ${electronic_devices.value} per year`);
+});
 
-//Deuxieme type d'événement: Les selections
-energieRenouvelable.addEventListener("change",function(){
-    if(energieRenouvelable.checked){
-        console.log("Vous utilisez bien de l'energie renouvelable")
-    }else{
-        console.log("Vous n'utilisez pas d'energie renouvelable")
+// Selection events
+renewableEnergy.addEventListener("change", function() {
+    if (renewableEnergy.checked) {
+        console.log("Using renewable energy: Yes");
+    } else {
+        console.log("Using renewable energy: No");
     }
-})
+});
 
-alimentation_viande.addEventListener("change",function(){
-    console.log(`Vous consommer ${alimentation_viande.value} de la viande`)
-})
+meat_consumption.addEventListener("change", function() {
+    console.log(`Meat consumption frequency: ${meat_consumption.value}`);
+});
 
-//Troiseme type d'evenement: Les clicks de bouton
+// Button click events
+submitBtn.addEventListener("click", function(event) {
+    event.preventDefault();
+    calculateFootprint();
+});
 
-boutonEnvoyer.addEventListener("click", function(){
-    event.preventDefault()
-    calculerEmpreinte()
-})
+resetBtn.addEventListener("click", function() {
+    console.log("Form has been successfully reset");
+});
 
-boutonReset.addEventListener("click",function(){
-    console.log("Votre formulaire a été reinitialise avc succés")
-})
+// STEP 3: CALCULATION LOGIC
 
-
-//creation de la fonction empreinte
-function calculerEmpreinte(){
-    const kmVoiture=Number(transport_individuel.value)|| 0
-    const kmBus=Number(transport_collectif.value) || 0
-    const nbVols=Number(transport_aerien.value) || 0
-    const electricite=Number(energie_consomme.value) || 0
-    const nbAppareils=Number(appareils_electronique.value) || 0
-    const viande_consommation=alimentation_viande.value
+function calculateFootprint() {
+    const carKm = Number(individual_transport.value) || 0;
+    const busKm = Number(collective_transport.value) || 0;
+    const flightCount = Number(aerial_transport.value) || 0;
+    const electricityUsage = Number(energy_consumed.value) || 0;
+    const deviceCount = Number(electronic_devices.value) || 0;
+    const meatFreq = meat_consumption.value;
     
-    //Conversion des donnée
-    const kmVoitureParAn=kmVoiture*52
-    const kmBusParAn=kmBus*52
-    const electriciteParAn=electricite*12
+    // Data conversion (weekly/monthly to annual)
+    const annualCarKm = carKm * 52;
+    const annualBusKm = busKm * 52;
+    const annualElectricity = electricityUsage * 12;
 
-    //calcul des empreinte par facteur avec les coefficients
-    
-    const empreinteVoiture=kmVoitureParAn*0.17
-    const empreinteBus=kmBusParAn*0.1
-    const empreinteAvion=nbVols*250
-    const empreinteElectricite= electriciteParAn*0.3
-    const empreinteAppareil=nbAppareils*100
+    // Footprint calculation per factor using coefficients
+    const carFootprint = annualCarKm * 0.17;
+    const busFootprint = annualBusKm * 0.1;
+    const flightFootprint = flightCount * 250;
+    const electricityFootprint = annualElectricity * 0.3;
+    const deviceFootprint = deviceCount * 100;
 
-    const empreinteTotal= empreinteAppareil+empreinteBus+empreinteElectricite+empreinteAvion+empreinteVoiture
+    const totalFootprint = deviceFootprint + busFootprint + electricityFootprint + flightFootprint + carFootprint;
 
-    //Verification des bonus/malus
-    let empreinteTotalFinal=empreinteTotal //on convertie en tonne de CO2 par an
-    //1. Augmentation selon la frequence de viande
-    if(viande_consommation === "souvent"){empreinteTotalFinal *= 1.20}
-    else if(viande_consommation === "parfois"){empreinteTotalFinal *= 1.10}
-    else if(viande_consommation === "rarement"){empreinteTotalFinal *= 1.05}
-    else if(viande_consommation === "jamais"){empreinteTotalFinal *= 1}
+    // Bonus/Malus verification
+    let finalTotalFootprint = totalFootprint; 
 
-    //2. Reduction pour l'energie renouvelable
-    if(energieRenouvelable.checked){
-        const empreinteElectriciteCorrige=empreinteElectricite*0.5
-        empreinteTotalFinal=empreinteTotalFinal-empreinteElectricite+empreinteElectriciteCorrige
+    // 1. Adjustment based on meat frequency (matches HTML option values)
+    if (meatFreq === "often") { finalTotalFootprint *= 1.20; }
+    else if (meatFreq === "sometimes") { finalTotalFootprint *= 1.10; }
+    else if (meatFreq === "rarely") { finalTotalFootprint *= 1.05; }
+    else if (meatFreq === "never") { finalTotalFootprint *= 1; }
+
+    // 2. Reduction for renewable energy
+    if (renewableEnergy.checked) {
+        const adjustedElectricityFootprint = electricityFootprint * 0.5;
+        finalTotalFootprint = finalTotalFootprint - electricityFootprint + adjustedElectricityFootprint;
     }
-    empreinteTotalFinal/=1000
-    empreinteValeur.textContent=empreinteTotalFinal.toFixed(2)
-    const nbTerre=empreinteTotalFinal/1.7
-    comparaisonValeur.textContent=nbTerre.toFixed(1)
 
-    if(empreinteTotalFinal<2){
-        recommandation.innerText="👏 Félicitation, vous avez une empreinte ecologique inférieur a la moyenne preuve de votre contribution au bien-etre de notre planéte!!"
-    }else if(empreinteTotalFinal<=5){
-        recommandation.innerText="🌱 Vous êtes dans la moyenne, continuez vos efforts!!"
-    }else{
-        recommandation.innerText="⚠️ Attention, votre empreinte ecologique est élevée, pensez a la reduire pour le bien de notre planéte"
-    }
+    // Convert to tonnes of CO2 per year
+    finalTotalFootprint /= 1000;
+    footprintValue.textContent = finalTotalFootprint.toFixed(2);
     
-}   
+    // Comparison with Earths (Average capacity per person)
+    const earthCount = finalTotalFootprint / 1.7;
+    comparisonValue.textContent = earthCount.toFixed(1);
+
+    // Dynamic recommendations based on final value
+    if (finalTotalFootprint < 2) {
+        recommendationText.innerText = "👏 Congratulations! Your ecological footprint is below average, proving your significant contribution to our planet's well-being!";
+    } else if (finalTotalFootprint <= 5) {
+        recommendationText.innerText = "🌱 You are within the average range. Keep up the good work and try to optimize further!";
+    } else {
+        recommendationText.innerText = "⚠️ Warning: Your ecological footprint is high. Consider reducing it to help preserve our planet.";
+    }
+}
